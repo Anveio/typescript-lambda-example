@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "./build",
     "target": "es6",
     "lib": [ "es6", "dom" ],
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": ".",
+    "rootDir": "./",
     "sourceMap": true,
     "allowJs": true,
     "noImplicitAny": true,
