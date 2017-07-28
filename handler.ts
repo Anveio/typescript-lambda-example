@@ -1,12 +1,12 @@
-'use strict';
+///<reference path="./index.d.ts"/>
 
-module.exports.hello = (event, context, callback) => {
+export const hello = (event: any, context: any, callback: Function): void => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
+      message: `Go Serverless v1.0! ${event} function executed successfully!`,
+      input: event
+    })
   };
 
   callback(null, response);

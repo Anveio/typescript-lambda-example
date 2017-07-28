@@ -17,13 +17,17 @@ service: serverless-example
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
 provider:
   name: aws
   runtime: nodejs6.10
 
 # you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+  stage: dev
+  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -57,6 +61,11 @@ provider:
 functions:
   hello:
     handler: handler.hello
+
+    events:
+      - http:
+          path: hello
+          method: get
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
